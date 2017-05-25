@@ -1,6 +1,6 @@
 module RemoteModel
-  class AccessController < ApplicationController
-    def result
+  class AccessManagerController < ApplicationController
+    def response_manager
       model_name = params[:model_name]
       method_name = params[:method_name]
       arguments = params[:arguments]

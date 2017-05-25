@@ -17,7 +17,7 @@ module RemoteModel
     if model_name.present? and method_name.present? and arguments.present? and attribute_name.present?
       url = RemoteModel.remote_url + '/remote_model?model_name=' + model_name + '&method_name=' + method_name + '&arguments=' + arguments + '&attribute_name=' + attribute_name
       response = HTTParty.get(url) rescue nil
-      response = response.body if response.present?
+      response = response.body if response.is_a? HTTParty::Response
     end
     return response
   end
